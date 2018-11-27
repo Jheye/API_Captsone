@@ -1,0 +1,90 @@
+html, body {
+  background: rgb(245, 245, 245);
+	margin: 5px;
+	padding: 5px 0px;
+  background-color: #EFEBE9;
+}
+
+.wrapper {
+	padding-top: 15px;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; 
+  padding-bottom: 10px; 
+	margin: auto;
+  height: 800px;
+  width: 100%;
+}
+
+h1 {
+  color: #E0E0E0;
+  text-align: center;
+	font-family: 'Baloo Tamma', cursive;
+  color: white;
+  font-size: 5em;
+}
+
+form {
+	display: block;
+	border-color: white;
+	width: 55;
+	margin: 0 auto;
+	max-width: 55%;
+	text-align: center;
+}
+
+input.js-query {
+  border: none;
+	border-color: white;
+  border-bottom: 1px solid rgb(79, 79, 99);
+  border-radius: 5px;
+	background-color: #E0E0E0;
+	padding: 5px;
+  color: black;
+  font-size: 20px;
+  width: 50%;
+  height: 50px;;
+  text-align: center;
+	margin-bottom: 5px;
+}
+
+button {
+  background-color: rgb(0, 255, 157);
+  border: none;
+  border-radius: 5px;
+  min-height: 2em;
+  max-height: 2em;
+  font-size: 28px;
+  width: 20%;
+}
+
+main {
+  padding-left: 50px;
+}
+
+.meal-thumbnail-image, .drink-thumbnail-image {
+  width: 250px;
+  border-radius: 3px;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3em;
+  text-align: center
+}
+
+.meal-name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3em;
+}
+
+.drink-name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3em;
+}
+
+.drink-question {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
+}
