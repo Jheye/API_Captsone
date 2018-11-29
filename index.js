@@ -29,26 +29,31 @@ function getDrinkDataFromApi(drinkCallback) {
 function renderResult(meal) {
   return `
     <div class="meal-wrapper">
-      <div>
-        <p class="meal-name">${meal.strMeal}</p> 
-        <a data-fancybox="gallery" href="${meal.strYoutube}">    
-          <img src="${meal.strMealThumb}" class="meal-thumbnail-image">
-        </a>
-        <p>Ingredients you need are:</p>
-        ${renderIngredients(meal)}         
-        <p class="meal-instructions">${meal.strInstructions}</p>
-      </div>
-      <h3 class="drink-question">Want a random drink pairing with your meal?</h3>
-      <form action="#" class="js-drink-form">
-        <button type="submit" class="js-random-drink">Get drink!</button>
-      </form>
+      <p class="meal-name">${meal.strMeal}</p>
+      <a href="#ingredients-modal" rel="modal:open">
+        <p class="meal-video">Click to see ingredients & instructions!</p>  
+      </a> 
+      <a data-fancybox="gallery" href="${meal.strYoutube}">    
+        <img src="${meal.strMealThumb}" class="meal-thumbnail-image">
+      </a>    
+        <div id="ingredients-modal" class="modal">
+          <p>Ingredients you need are:</p>
+          ${renderIngredients(meal)}         
+          <p class="meal-instructions">${meal.strInstructions}</p>
+          <h3 class="drink-question">Don't think just drink!?</h3>
+          <div class="js-drink-form">
+            <a href="#drink-modal" rel="modal:open" class="js-random-drink">Get drink!</a>
+          </div>
+        </div>
     </div>
   `
 }
 
+
+
 function renderDrinkResults(drink) {
   return `
-    <div class="drink-wrapper">
+    <div class="modal" id="drink-modal">
       <p class="drink-name">${drink.strDrink}</p> 
       <img src="${drink.strDrinkThumb}" class="drink-thumbnail-image">
       ${renderDrinkIngredients(drink)}
@@ -124,69 +129,13 @@ function renderIngredients(meal) {
 }
 
 function renderDrinkIngredients(drink) {
-  let html = '<ul>';
-  if (drink.strIngredient1 !== '') {
-    html += `<li>${drink.strMeasure1}: ${drink.strIngredient1}</li>`;
-  }
-  if (drink.strIngredient2 !== '') {
-    html += `<li>${drink.strMeasure2}: ${drink.strIngredient2}</li>`;
-  }
-  if (drink.strIngredient3 !== '') {
-    html += `<li>${drink.strMeasure3}: ${drink.strIngredient3}</li>`;
-  }
-  if (drink.strIngredient4 !== '') {
-    html += `<li>${drink.strMeasure4}: ${drink.strIngredient4}</li>`;
-  }
-  if (drink.strIngredient5 !== '') {
-    html += `<li>${drink.strMeasure5}: ${drink.strIngredient5}</li>`;
-  }
-  if (drink.strIngredient6 !== '') {
-    html += `<li>${drink.strMeasure6}: ${drink.strIngredient6}</li>`;
-  }
-  if (drink.strIngredient7 !== '') {
-    html += `<li>${drink.strMeasure7}: ${drink.strIngredient7}</li>`;
-  }
-  if (drink.strIngredient8 !== '') {
-    html += `<li>${drink.strMeasure8}: ${drink.strIngredient8}</li>`;
-  }
-  if (drink.strIngredient9 !== '') {
-    html += `<li>${drink.strMeasure9}: ${drink.strIngredient9}</li>`;
-  }
-  if (drink.strIngredient10 !== '') {
-    html += `<li>${drink.strMeasure10}: ${drink.strIngredient10}</li>`;
-  }
-  if (drink.strIngredient11 !== '') {
-    html += `<li>${drink.strMeasure11}: ${drink.strIngredient11}</li>`;
-  }
-  if (drink.strIngredient12 !== '') {
-    html += `<li>${drink.strMeasure12}: ${drink.strIngredient12}</li>`;
-  }
-  if (drink.strIngredient13 !== '') {
-    html += `<li>${drink.strMeasure13}: ${drink.strIngredient13}</li>`;
-  }
-  if (drink.strIngredient14 !== '') {
-    html += `<li>${drink.strMeasure14}: ${drink.strIngredient14}</li>`;
-  }
-  if (drink.strIngredient15 !== '') {
-    html += `<li>${drink.strMeasure15}: ${drink.strIngredient15}</li>`;
-  }
-  if (drink.strIngredient16 !== '') {
-    html += `<li>${drink.strMeasure16}: ${drink.strIngredient16}</li>`;
-  }
-  if (drink.strIngredient17 !== '') {
-    html += `<li>${drink.strMeasure17}: ${drink.strIngredient17}</li>`;
-  }
-  if (drink.strIngredient18 !== '') {
-    html += `<li>${drink.strMeasure18}: ${drink.strIngredient18}</li>`;
-  }
-  if (drink.strIngredient19 !== '') {
-    html += `<li>${drink.strMeasure19}: ${drink.strIngredient19}</li>`;
-  }
-  if (drink.strIngredient20 !== '') {
-    html += `<li>${drink.strMeasure20}: ${drink.strIngredient20}</li>`;
-  }
-  html += '</ul>';
-  return html;
+  const list = Array(20).fill().map((_, i) => {
+				const ingredientName = drink[`strIngredient${i + 1}`];
+    if (ingredientName != null && ingredientName.trim()) {
+      return `<li>${drink['strMeasure' + (i + 1)]}: ${drink['strIngredient' + (i + 1)]}</li>`;
+    }
+  }).filter(x => x !== undefined).join('');
+  return `<ul>${list}</ul>`;
 }
 
 function displayMealSearchData(results) {
@@ -217,7 +166,7 @@ function watchMealSubmit() {
 }
 
 function watchDrinkSubmit() {
-  $(document.body).on('submit','.js-drink-form',(event) => {
+  $(document.body).on('click','.js-drink-form',(event) => {
     event.preventDefault();
     const drinkQueryTarget = $(event.currentTarget).find('.js-random-drink');
     const drinkQuery = drinkQueryTarget.val();
