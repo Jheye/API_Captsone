@@ -29,19 +29,10 @@ function getDrinkDataFromApi(drinkCallback) {
 function renderResult(meal) {
   return `
     <div class="meal-wrapper">
-      <div>
         <p class="meal-name">${meal.strMeal}</p> 
         <a data-fancybox="gallery" href="${meal.strYoutube}">    
           <img src="${meal.strMealThumb}" class="meal-thumbnail-image">
         </a>
-        <p>Ingredients you need are:</p>
-        ${renderIngredients(meal)}         
-        <p class="meal-instructions">${meal.strInstructions}</p>
-      </div>
-      <h3 class="drink-question">Want a random drink pairing with your meal?</h3>
-      <form action="#" class="js-drink-form">
-        <button type="submit" class="js-random-drink">Get drink!</button>
-      </form>
     </div>
   `
 }
