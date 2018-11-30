@@ -1,23 +1,23 @@
-html, body 
+html, body
 {
   background: rgb(245, 245, 245);
   background-color: #EFEBE9;
 }
 
-.wrapper 
+.wrapper
 {
 	padding-top: 15px;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center; 
-  padding-bottom: 10px; 
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 10px;
 	margin: auto;
   height: 800px;
   width: 100%;
 }
 
-h1 
+h1
 {
   color: #E0E0E0;
   text-align: center;
@@ -26,7 +26,7 @@ h1
   font-size: 5em;
 }
 
-form 
+form
 {
 	display: block;
 	border-color: white;
@@ -36,7 +36,7 @@ form
 	text-align: center;
 }
 
-input.js-query 
+input.js-query
 {
   border: none;
 	border-color: white;
@@ -52,7 +52,7 @@ input.js-query
 	margin-bottom: 5px;
 }
 
-button.meal-button 
+button.meal-button
 {
   background-color: rgba(255, 0, 0, 0.657);
   border: none;
@@ -105,13 +105,13 @@ input:focus, textarea:focus {
 	padding:1%;
 }
 
-.meal-thumbnail-image, .drink-thumbnail-image 
+.meal-thumbnail-image, .drink-thumbnail-image
 {
   border-radius: 10px;
 		width:100%;
 }
 
-a:hover 
+a:hover
 {
   color: rgb(42, 218, 36);
 }
@@ -121,14 +121,14 @@ a:active
   color: blue;
 }
 
-h2 
+h2
 {
   font-family: 'Roboto Slab', serif;
   font-size: 3em;
   text-align: center
 }
 
-.meal-name 
+.meal-name
 {
   font-family: 'Roboto Slab', serif;
   font-size: 2.8em;
@@ -141,13 +141,13 @@ h2
   font-style: oblique;
 }
 
-.drink-name 
+.drink-name
 {
   font-family: 'Roboto Slab', serif;
   font-size: 3em;
 }
 
-.drink-question 
+.drink-question
 {
   font-family: 'Pacifico', cursive;
   font-size: 2em;

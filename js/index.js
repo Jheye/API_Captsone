@@ -26,23 +26,23 @@ function getDrinkDataFromApi(drinkCallback) {
   $.ajax(drinkSettings);
 }
 
-function renderResult(meal) {
+function renderResult(meal, index) {
   return `
     <div class="meal-wrapper">
       <p class="meal-name">${meal.strMeal}</p>
-      <a href="#ingredients-modal" rel="modal:open">
-        <p class="meal-video">Click to see ingredients & instructions!</p>  
-      </a> 
-      <a data-fancybox="gallery" href="${meal.strYoutube}">    
+      <a href="#ingredients-modal-${index}" rel="modal:open">
+        <p class="meal-video">Click to see ingredients & instructions!</p>
+      </a>
+      <a data-fancybox="gallery" href="${meal.strYoutube}">
         <img src="${meal.strMealThumb}" class="meal-thumbnail-image">
-      </a>    
-        <div id="ingredients-modal" class="modal">
+      </a>
+        <div id="ingredients-modal-${index}" class="modal">
           <p>Ingredients you need are:</p>
-          ${renderIngredients(meal)}         
+          ${renderIngredients(meal)}
           <p class="meal-instructions">${meal.strInstructions}</p>
           <h3 class="drink-question">Don't think just drink!?</h3>
           <div class="js-drink-form">
-            <a href="#drink-modal" rel="modal:open" class="js-random-drink">Get drink!</a>
+            <a href="#" class="js-random-drink">Get drink!</a>
           </div>
         </div>
     </div>
@@ -51,16 +51,7 @@ function renderResult(meal) {
 
 
 
-function renderDrinkResults(drink) {
-  return `
-    <div class="modal" id="drink-modal">
-      <p class="drink-name">${drink.strDrink}</p> 
-      <img src="${drink.strDrinkThumb}" class="drink-thumbnail-image">
-      ${renderDrinkIngredients(drink)}
-      <p class="drink-instructions">${drink.strInstructions}</p>
-    </div>
-  `
-}
+
 
 function renderIngredients(meal) {
   let html = '<ul>';
@@ -139,13 +130,26 @@ function renderDrinkIngredients(drink) {
 }
 
 function displayMealSearchData(results) {
-  const html = results.meals.map(renderResult)
+  const html = results.meals.map(renderResult);
   $('.js-meal-search-results').html(html);
 }
 
-function displayDrinkData(drinkCallback) {
-  const drinkHtml = drinkCallback.drinks.map(renderDrinkResults)
+function displayDrinkData(results) {
+  // const drinkHtml = results.drinks.map(renderDrinkResults);
+  const drinkHtml = renderDrinkResults(results.drinks[0]);
   $('.js-drink-search-results').html(drinkHtml);
+  $('#drink-modal').modal({ closeExisting: false });
+}
+
+function renderDrinkResults(drink) {
+  return `
+    <div class="modal" id="drink-modal">
+      <p class="drink-name">${drink.strDrink}</p>
+      <img src="${drink.strDrinkThumb}" class="drink-thumbnail-image">
+      ${renderDrinkIngredients(drink)}
+      <p class="drink-instructions">${drink.strInstructions}</p>
+    </div>
+  `
 }
 
 function addEventListeners() {
@@ -161,7 +165,7 @@ function watchMealSubmit() {
     const query = queryTarget.val(); //value is text typed in input box
     queryTarget.val("");
     $("main").prop('hidden', false)
-    getDataFromApi(query, displayMealSearchData); 
+    getDataFromApi(query, displayMealSearchData);
   });
 }
 
@@ -169,9 +173,7 @@ function watchDrinkSubmit() {
   $(document.body).on('click','.js-drink-form',(event) => {
     event.preventDefault();
     const drinkQueryTarget = $(event.currentTarget).find('.js-random-drink');
-    const drinkQuery = drinkQueryTarget.val();
-    drinkQueryTarget.val("");
-    getDrinkDataFromApi(displayDrinkData); 
+    getDrinkDataFromApi(displayDrinkData);
   });
 }
 
