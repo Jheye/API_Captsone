@@ -1,154 +1,337 @@
-html, body
+html, body 
 {
-  background: rgb(245, 245, 245);
-  background-color: #EFEBE9;
+    background: rgb(245, 245, 245);
+    background-color: #EFEBE9;
 }
 
-.wrapper
+
+.wrapper 
 {
-	padding-top: 15px;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 10px;
-	margin: auto;
-  height: 800px;
-  width: 100%;
+    padding-top: px;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom; 
+    padding-bottom: 3px; 
+    margin: auto;
+    height: 600px;
 }
 
-h1
+h1 
 {
-  color: #E0E0E0;
-  text-align: center;
-	font-family: 'Baloo Tamma', cursive;
-  color: white;
-  font-size: 5em;
+    color: #E0E0E0;
+    padding-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Baloo Tamma', cursive;
+    color: white;
+    font-size: 5em;
 }
 
-form
+fieldset 
 {
-	display: block;
-	border-color: white;
-	width: 55;
-	margin: 0 auto;
-	max-width: 55%;
-	text-align: center;
+    font-size: 1.5em;
+    border-radius: 1em;
+    font-family: sans-serif;
+    border-width: 0;
+    text-align: center;
 }
 
-input.js-query
+label, input, button
 {
-  border: none;
-	border-color: white;
-  border-bottom: 1px solid rgb(79, 79, 99);
-  border-radius: 5px;
-	background-color: #E0E0E0;
-	padding: 5px;
-  color: black;
-  font-size: 20px;
-  width: 50%;
-  height: 50px;;
-  text-align: center;
-	margin-bottom: 5px;
+    font-size: 1.25;
+    padding: 0.5em 0.6em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    border: .5px solid #f90;
+    background-color: #fff;
 }
 
-button.meal-button
+input 
 {
-  background-color: rgba(255, 0, 0, 0.657);
-  border: none;
-  border-radius: 5px;
-  min-height: 2em;
-  max-height: 2em;
-  font-size: 28px;
-  width: 50%;
+    margin-right: 0;
+    border-radius: 0.6em 0 0 0.6em;
 }
 
-button.meal-button:hover
+input:focus 
 {
-  background-color: rgb(42, 218, 36);
+    outline: none;
+    background-color: #ffa;
+    background-color: rgba(255,255,210,0.5);
+}
+
+button 
+{
+    margin-left: .5px;
+    border-radius: 0 0.6em 0.6em 0;
+    background-color: rgb(221, 23, 23);
+}
+
+button:active,
+button:focus 
+{
+    background-color: #acf;
+    outline: none;    
+}
+
+button:hover 
+{
+    background-color: rgb(42, 218, 36);
 }
 
 .js-random-drink
 {
-  background-color: rgba(255, 0, 0, 0.657);
-  color: black;
-  border: none;
-  border-radius: 10px;
-  min-height: 2em;
-  max-height: 3em;
-  font-size: 28px;
-  width: 50%;
-  text-align: center;
-  padding: 10px 40px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration-line: none;
-  display: block;
-  margin-bottom: 10px 0;
+    background-color: rgba(255, 0, 0, 0.657);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 28px;
+    width: 50%;
+    text-align: center;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration-line: none;
+    display: block;
+    margin: auto;
 }
 
 .js-random-drink:hover
 {
-  background-color: rgb(42, 218, 36);
-  color: black;
+    background-color: rgb(42, 218, 36);
+    color: black;
+}
+
+.drink-question 
+{
+    text-align: center;
+}
+
+.js-drink-form 
+{
+    text-align: center;
+}
+
+.js-random-drink
+{
+    text-align: center;
 }
 
 input:focus, textarea:focus {
-  background   : rgb(126, 128, 121);
-  border-radius: 5px;
-  outline      : none;
+    background   : rgb(126, 128, 121);
+    border-radius: 5px;
+    outline      : none;
 }
 
 .meal-wrapper{
 	float:left;
 	width:31.3%;
-	padding:1%;
+    padding:1%;
 }
 
-.meal-thumbnail-image, .drink-thumbnail-image
+.meal-thumbnail-image, .drink-thumbnail-image 
 {
-  border-radius: 10px;
-		width:100%;
+    border-radius: 10px;
+    width:100%;
 }
 
-a:hover
+
+
+a:hover 
 {
-  color: rgb(42, 218, 36);
+    color: rgb(42, 218, 36);
 }
 
 a:active
 {
-  color: blue;
+    color: blue;
 }
 
-h2
+h2 
 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 3em;
-  text-align: center
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em;
+    text-align: center
 }
 
-.meal-name
+.meal-name 
 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 2.8em;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
 }
 
 .meal-video
 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 1em;
-  font-style: oblique;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    font-style: oblique;
 }
 
-.drink-name
+.drink-name 
 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 3em;
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em;
 }
 
-.drink-question
+.drink-question 
 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2em;
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 500px) {
+
+        h1 
+    {
+        color: #E0E0E0;
+        padding-top: 50px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-family: 'Baloo Tamma', cursive;
+        color: white;
+        font-size: 3em;
+    }
+        
+        .meal-wrapper{
+            display: block;
+            width:100%;
+            padding:1%;
+        }
+
+        .meal-thumbnail-image, .drink-thumbnail-image 
+    {
+        border-radius: 10px;
+        display: block;
+        width:75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        label, input, button
+    {
+        font-size: .75em;
+        padding: 0.5em 0.6em;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        border: .5px solid #f90;
+        max-width: 150px;
+        background-color: #fff;
+    }
+
+        button 
+    {
+        margin-left: .5px;
+        border-radius: 0 0.6em 0.6em 0;
+        background-color: rgb(221, 23, 23);
+    }
+
+        button:active,
+        button:focus 
+    {
+        background-color: #acf;
+        outline: none;    
+    }
+
+        button:hover 
+    {
+        background-color: rgb(42, 218, 36);
+    }
+
+        .meal-name 
+    {
+        font-family: 'Roboto Slab', serif;
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+        .meal-video
+    {
+        font-family: 'Roboto Slab', serif;
+        font-size: 1em;
+        font-style: oblique;
+        text-align: center;
+
+    }
+
+
+}
+
+@media only screen and (min-device-width : 500px) and (max-device-width : 750px) {
+
+    h1 
+    {
+        color: #E0E0E0;
+        padding-top: 50px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-family: 'Baloo Tamma', cursive;
+        color: white;
+        font-size: 3em;
+    }
+        
+        .meal-wrapper{
+            display: block;
+            width:100%;
+            padding:1%;
+        }
+
+        .meal-thumbnail-image, .drink-thumbnail-image 
+    {
+        border-radius: 10px;
+        display: block;
+        width:75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        label, input, button
+    {
+        font-size: .75em;
+        padding: 0.5em 0.6em;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        border: .5px solid #f90;
+        max-width: 150px;
+        background-color: #fff;
+    }
+
+        button 
+    {
+        margin-left: .5px;
+        border-radius: 0 0.6em 0.6em 0;
+        background-color: rgb(221, 23, 23);
+    }
+
+        button:active,
+        button:focus 
+    {
+        background-color: #acf;
+        outline: none;    
+    }
+
+        button:hover 
+    {
+        background-color: rgb(42, 218, 36);
+    }
+
+        .meal-name 
+    {
+        font-family: 'Roboto Slab', serif;
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+        .meal-video
+    {
+        font-family: 'Roboto Slab', serif;
+        font-size: 1em;
+        font-style: oblique;
+        text-align: center;
+    }
+
+
+
+    }
