@@ -79,7 +79,6 @@ h2.results-heading {
     text-align: center;
     color: rgb(42, 218, 36);
     height: 25px;
-
 }
 
 
@@ -88,6 +87,9 @@ h2.results-heading {
     font-size: 2.8em;
     text-align: center;
     color: white;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
 
 a:link {
@@ -102,7 +104,6 @@ a:link {
 .drink-name {
     font-family: 'Roboto Slab', serif;
     font-size: 3em;
-
 }
 
 .drink-question {
@@ -141,8 +142,7 @@ input:focus, textarea:focus {
 
 .meal-wrapper {
 	float:left;
-	width:31.3%;
-    padding:1%;
+	width:25%;
     text-align: center;
 }
 
@@ -160,14 +160,24 @@ a:active {
     color: blue;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1200px) {
+    .meal-wrapper {
+        width:33.3%;
+        text-align: center;
+    }
+  }
 
-.meal-wrapper {
-	width:100%;
-    padding:1%;
-    text-align: center;
+@media screen and (max-width: 992px) {
+    .meal-wrapper {
+        width:50%;
+        text-align: center;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .meal-wrapper {
+        width:100%;
+        text-align: center;
+    }
 }
 
-
-
-}
