@@ -43,7 +43,7 @@ label, input, button {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     border: .5px solid #f90;
-    background-color: rgb(146, 140, 140);
+    background-color: lightgray;
 }
 
 input {
