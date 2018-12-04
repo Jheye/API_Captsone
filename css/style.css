@@ -4,20 +4,17 @@ body {
     background-image: linear-gradient(to bottom right, black, rgb(54, 52, 52));
 }
 
+.alert {
+    color: white;
+    text-align: center;
+}
 
-.wrapper {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
+.main {
+    background-image: url(../img/plate_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom; 
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 500px;
-    max-height: 600px;
-    max-width: 1600px;
-    margin-top: none;
-    padding-top: none;
+    background-position: top;
+    padding-top: 144px;
 }
 
 h1 {
@@ -27,6 +24,8 @@ h1 {
     text-align: center;
     font-family: 'Baloo Tamma', cursive;
     font-size: 5em;
+    text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
 }
 
 fieldset {
@@ -67,7 +66,7 @@ button {
 button:active,
 button:focus {
     background-color: #acf;
-    outline: none;    
+    outline: none;
 }
 
 button:hover {
