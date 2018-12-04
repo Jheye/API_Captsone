@@ -27,9 +27,9 @@ function getDrinkDataFromApi(drinkCallback) {
 }
 
 function scrollToMealResults() {
-    $("#top").on('click', function() { 
-        var position = $("#image").offset().top; 
-        $("HTML, BODY").animate({ scrollTop: position }, 1000); 
+    $("#top").on('click', function() {
+        var position = $("#image").offset().top;
+        $("HTML, BODY").animate({ scrollTop: position }, 1000);
     });
  };
 
@@ -77,15 +77,20 @@ function renderDrinkIngredients(drink) {
 }
 
 function displayMealSearchData(results) {
-  const html = results.meals.map(renderResult);
-  $('.js-meal-search-results').html(html);
+    let html;
+    if (results.meals === null) {
+        html = '<p class="alert">Sorry, we could find any meals!</p>';
+    } else {
+        html = results.meals.map(renderResult);
+    }
+    $('.js-meal-search-results').html(html);
 }
 
 function displayDrinkData(results) {
   // const drinkHtml = results.drinks.map(renderDrinkResults);
   const drinkHtml = renderDrinkResults(results.drinks[0]);
   $('.js-drink-search-results').html(drinkHtml);
-  $('#drink-modal').modal({ 
+  $('#drink-modal').modal({
     closeExisting: false,
     fadeDuration: 500,
     fadeDelay: .5});
