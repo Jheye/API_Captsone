@@ -1,154 +1,174 @@
-html, body 
-{
-  background: rgb(245, 245, 245);
-  background-color: #EFEBE9;
+body {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: linear-gradient(to bottom right, black, rgb(54, 52, 52));
 }
 
-.wrapper 
-{
-	padding-top: 15px;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center; 
-  padding-bottom: 10px; 
-	margin: auto;
-  height: 800px;
-  width: 100%;
+
+.wrapper {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2291744/plate_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom; 
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    max-height: 600px;
+    max-width: 1600px;
+    margin-top: none;
+    padding-top: none;
 }
 
-h1 
-{
-  color: #E0E0E0;
-  text-align: center;
-	font-family: 'Baloo Tamma', cursive;
-  color: white;
-  font-size: 5em;
+h1 {
+    color: rgb(42, 218, 36);
+    padding-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Baloo Tamma', cursive;
+    font-size: 5em;
 }
 
-form 
-{
-	display: block;
-	border-color: white;
-	width: 55;
-	margin: 0 auto;
-	max-width: 55%;
-	text-align: center;
+fieldset {
+    font-size: 1.5em;
+    border-radius: 1em;
+    font-family: sans-serif;
+    border-width: 0;
+    text-align: center;
 }
 
-input.js-query 
-{
-  border: none;
-	border-color: white;
-  border-bottom: 1px solid rgb(79, 79, 99);
-  border-radius: 5px;
-	background-color: #E0E0E0;
-	padding: 5px;
-  color: black;
-  font-size: 20px;
-  width: 50%;
-  height: 50px;;
-  text-align: center;
-	margin-bottom: 5px;
+label, input, button {
+    font-size: 1.25;
+    padding: 10px 10px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    border: .5px solid #f90;
+    background-color: #fff;
 }
 
-button.meal-button 
-{
-  background-color: rgba(255, 0, 0, 0.657);
-  border: none;
-  border-radius: 5px;
-  min-height: 2em;
-  max-height: 2em;
-  font-size: 28px;
-  width: 50%;
+input {
+    margin-right: 0;
+    border-radius: 0.6em 0 0 0.6em;
 }
 
-button.meal-button:hover
-{
-  background-color: rgb(42, 218, 36);
+input:focus {
+    outline: none;
+    background-color: #ffa;
+    background-color: rgba(255,255,210,0.5);
 }
 
-.js-random-drink
-{
-  background-color: rgba(255, 0, 0, 0.657);
-  color: black;
-  border: none;
-  border-radius: 10px;
-  min-height: 2em;
-  max-height: 3em;
-  font-size: 28px;
-  width: 50%;
-  text-align: center;
-  padding: 10px 40px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration-line: none;
-  display: block;
-  margin-bottom: 10px 0;
+button {
+    margin-left: .5px;
+    border-radius: 0 0.6em 0.6em 0;
+    background-color: rgb(221, 23, 23);
 }
 
-.js-random-drink:hover
-{
-  background-color: rgb(42, 218, 36);
-  color: black;
+button:active,
+button:focus {
+    background-color: #acf;
+    outline: none;    
+}
+
+button:hover {
+    background-color: c;
+}
+
+h2.results-heading {
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(42, 218, 36);
+    height: 25px;
+
+}
+
+
+.meal-name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    text-align: center;
+    color: white;
+}
+
+a:link {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-style: oblique;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.drink-name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em;
+
+}
+
+.drink-question {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+.js-random-drink {
+    background-color: rgba(255, 0, 0, 0.657);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 28px;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration-line: none;
+    display: block;
+    margin: auto;
+}
+
+
+.js-random-drink:hover {
+    background-color: rgb(42, 218, 36);
+    color: black;
 }
 
 input:focus, textarea:focus {
-  background   : rgb(126, 128, 121);
-  border-radius: 5px;
-  outline      : none;
+    background   : rgb(126, 128, 121);
+    border-radius: 5px;
+    outline      : none;
 }
 
-.meal-wrapper{
+.meal-wrapper {
 	float:left;
 	width:31.3%;
-	padding:1%;
+    padding:1%;
+    text-align: center;
 }
 
-.meal-thumbnail-image, .drink-thumbnail-image 
-{
-  border-radius: 10px;
-		width:100%;
+.meal-thumbnail-image, .drink-thumbnail-image {
+    border-radius: 10px;
+    width:80%;
+    text-align: center;
 }
 
-a:hover 
-{
-  color: rgb(42, 218, 36);
+a:hover {
+    color: rgb(42, 218, 36);
 }
 
-a:active
-{
-  color: blue;
+a:active {
+    color: blue;
 }
 
-h2 
-{
-  font-family: 'Roboto Slab', serif;
-  font-size: 3em;
-  text-align: center
+@media screen and (max-width: 480px) {
+
+.meal-wrapper {
+	width:100%;
+    padding:1%;
+    text-align: center;
 }
 
-.meal-name 
-{
-  font-family: 'Roboto Slab', serif;
-  font-size: 2.8em;
-}
 
-.meal-video
-{
-  font-family: 'Roboto Slab', serif;
-  font-size: 1em;
-  font-style: oblique;
-}
 
-.drink-name 
-{
-  font-family: 'Roboto Slab', serif;
-  font-size: 3em;
-}
-
-.drink-question 
-{
-  font-family: 'Pacifico', cursive;
-  font-size: 2em;
 }
